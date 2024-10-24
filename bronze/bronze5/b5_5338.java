@@ -6,7 +6,6 @@ public class b5_5338 {
         System.out.println("'-..-'|   ||   |");
         System.out.println("'-..-'|_.-;;-._|");
         System.out.println("'-..-'|   ||   |");
-        System.out.println("'-..-'|_.-''-._|");
+        System.out.print("'-..-'|_.-''-._|");
     }
 }
-https://www.acmicpc.net/problem/5338
