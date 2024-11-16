@@ -23,7 +23,7 @@ public class s4_10816 {
         int M = Integer.parseInt(br.readLine());
         st = new StringTokenizer(br.readLine());
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();  
 
         for (int i = 0; i < M; i++) {
             int key = Integer.parseInt(st.nextToken());
