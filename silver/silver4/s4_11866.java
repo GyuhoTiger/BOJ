@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
+// 1158 요세푸스 문제 와 동일
 public class s4_11866 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
