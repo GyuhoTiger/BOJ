@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
+// Stack
 public class s4_9012 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,14 +18,14 @@ public class s4_9012 {
 			Stack<Character> stack = new Stack<Character>();
 			
 			for(int j = 0; j < len; j++) {
-				if(str.charAt(j) == '(') {
+				if(str.charAt(j) == '(') { // ( : stack에 push
 					stack.push(str.charAt(j));
 				}else {
 					if(stack.empty()) {
-						stack.push(str.charAt(j));
+						stack.push(str.charAt(j)); // 비어있으면 
 						break;
 					}else {
-						stack.pop();
+						stack.pop(); // 비어있지 않으면 pop
 					}
 				}
 			}
