@@ -22,7 +22,7 @@ public class s4_9012 {
 					stack.push(str.charAt(j));
 				}else {
 					if(stack.empty()) {
-						stack.push(str.charAt(j)); // 비어있으면 
+						stack.push(str.charAt(j)); // 비어있으면 올바른 괄호 문자열 아님
 						break;
 					}else {
 						stack.pop(); // 비어있지 않으면 pop
