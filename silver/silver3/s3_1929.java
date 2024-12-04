@@ -16,7 +16,6 @@ public class s3_1929 {
         
         boolean arr[] = new boolean[N + 1];
 
-
         arr[0] = true;
         arr[1] = true;
 
