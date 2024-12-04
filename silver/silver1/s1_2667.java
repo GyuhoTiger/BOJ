@@ -15,19 +15,19 @@ public class s1_2667 {
     static int[] dy = {1, 0, -1, 0};
 
     public static void dfs(int x, int y) {
-        visited[y][x] = true;
+        visited[x][y] = true;
         count++;
 
         for(int i = 0; i < 4; i++){
             int nx = x + dx[i];
             int ny = y + dy[i];
             
-            if(nx >= 0 && nx < N && ny >= 0 && ny < N  && !visited[ny][nx] && map[ny][nx] == 1){
+            if(nx >= 0 && nx < N && ny >= 0 && ny < N  && !visited[nx][ny] && map[nx][ny] == 1){
                 dfs(nx, ny);
             }
         }
     }
-    
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
@@ -48,7 +48,7 @@ public class s1_2667 {
             for(int j = 0; j < N; j++) {
                 if(!visited[i][j] && map[i][j] == 1) {
                     count = 0;
-                    dfs(j, i);
+                    dfs(i, j);
                     arr.add(count);
                 }
             }
