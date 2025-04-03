@@ -17,7 +17,7 @@ public class s2_2885 {
             size *= 2;
         }
 
-        System.out.println(size + " ");
+        System.out.print(size + " ");
 
         while(K > 0) {
             if(K >= size) {
@@ -28,7 +28,7 @@ public class s2_2885 {
             }
         }
 
-        System.out.println(count);
+        System.out.print(count);
         br.close();
     }
 }
