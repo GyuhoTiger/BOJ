@@ -37,10 +37,10 @@ public class s1_10844 {
 
         int sum = 0;
         for (int i = 0; i <= 9; i++) {
-            sum += dp[N][i];
+            sum = (sum + dp[N][i]) % mod;
         }
 
-        System.out.println(sum % mod);
+        System.out.println(sum);
         br.close();
     }
 }
