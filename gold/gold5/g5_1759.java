@@ -14,8 +14,8 @@ public class g5_1759 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        L = Integer.parseInt(br.readLine()); // 암호 알파벳 소문자 L자리수
-        C = Integer.parseInt(br.readLine()); // 알파벳 구성 C개
+        L = Integer.parseInt(st.nextToken()); // 암호 알파벳 소문자 L자리수
+        C = Integer.parseInt(st.nextToken()); // 알파벳 구성 C개
 
         arr = new char[C];
         password = new char[L];
