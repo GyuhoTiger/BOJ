@@ -18,8 +18,8 @@ public class g4_1504 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(st.nextToken()); // 노드 개수 N
-        int E = Integer.parseInt(st.nextToken()); // 간선 개수 E
+        N = Integer.parseInt(st.nextToken()); // 노드 개수 N
+        E = Integer.parseInt(st.nextToken()); // 간선 개수 E
         graph = new ArrayList[N + 1];
 
         for (int i = 1; i <= N; i++) {
@@ -41,16 +41,28 @@ public class g4_1504 {
         int v2 = Integer.parseInt(st.nextToken()); // 반드시 거쳐야하는 정점 v2
 
         // 가만 생각해보니까 v1, v2를 모두 거치는 최단 경로를 구해야하므로 다익스트라 구간을 나눈걸 2번 계산해서 최솟값을 찾아야함
-        int case1 = dijkstra(1, v2) + dijkstra(v1, v2) + dijkstra(v2, N);
+        int case1 = dijkstra(1, v1) + dijkstra(v1, v2) + dijkstra(v2, N);
         int case2 = dijkstra(1, v2) + dijkstra(v2, v1) + dijkstra(v1, N);
 
         int result = Math.min(case1, case2);
 
-        if (result >= max) {
+        if (result == max) {
             System.out.println(-1);
         } else {
             System.out.println(result);
         }
+
+        // int a = dijkstra(1, v1);
+        // int b = dijkstra(v1, v2);
+        // int c = dijkstra(v2, N);
+        // int d = dijkstra(1, v2);
+        // int e = dijkstra(v2, v1);
+        // int f = dijkstra(v1, N);
+
+        // int case1 = (a == max || b == max || c == max) ? max : a + b + c;
+        // int case2 = (d == max || e == max || f == max) ? max : d + e + f;
+
+        // int result = Math.min(case1, case2);
 
         br.close();
     }
@@ -63,6 +75,25 @@ public class g4_1504 {
         PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
         pq.add(new int[]{start, 0});
 
-        return dist[end];
+        while (!pq.isEmpty()) {
+            int[] now = pq.poll();
+            int cur = now[0]; // 현재 노드 번호
+            int cost = now[1]; // 지금까지 거리 비용
+
+            if (cost > dist[cur]) continue;
+
+            for (int i = 0; i < graph[cur].size(); i++) {
+                int nextNode = graph[cur].get(i)[0];
+                int weight = graph[cur].get(i)[1]; 
+                int nextCost = cost + weight;
+    
+                if (nextCost < dist[nextNode]) {
+                    dist[nextNode] = nextCost;
+                    pq.add(new int[]{nextNode, nextCost});
+                }
+            }
+        }
+
+        return dist[end]; // 최단 거리 반환
     }
 }
