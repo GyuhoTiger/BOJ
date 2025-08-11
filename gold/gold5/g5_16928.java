@@ -1,4 +1,4 @@
-package gold.gold4;
+package gold.gold5;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class g4_16928 {
+public class g5_16928 {
     static int[] board = new int[101]; // 1 ~ 100번까지의 게임칸
     static int[] visited = new int[101]; // 방문 횟수
     public static void main(String[] args) throws IOException {
